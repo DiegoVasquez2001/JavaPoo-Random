@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
+paquete  vista
+ */
 package vista;
-
+/*
+librerias de java ,encriptado , de de mi sql
+ */
 import modelo.Hash;
 import javax.swing.JOptionPane;
 import modelo.SqlUsuarios;
@@ -19,6 +24,10 @@ public class login extends javax.swing.JFrame {
      * Creates new form login
      */
     public login() {
+        /*
+componentes
+ y de localizacion
+ */
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -103,19 +112,29 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        
+        /*
+llamada la  funcion de  sqlusuario
+ */
         SqlUsuarios modSql = new SqlUsuarios();
         Usuarios mod = new Usuarios();
-        
+        /*
+declarar password
+ */
         String pass = new String(txtPassword.getPassword());
-        
+        /*
+condicion de  igualdad  en te de  ususario de  el  passwor
+ */
         if (!txtUsuario.getText().equals("") && !pass.equals("")) { 
-            
+            /*
+encriptacion
+ */
             String nuevoPass = Hash.sha1(pass);
             
             mod.setUsuario(txtUsuario.getText());
             mod.setPassword(nuevoPass);
-            
+            /*
+condicio de  fame  menu
+ */
             if (modSql.login(mod)) {
                 Inicio.frmLog = null;
                 this.dispose();
@@ -136,7 +155,9 @@ public class login extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         Inicio.frmLog = null;
     }//GEN-LAST:event_formWindowClosing
-    
+    /*
+lipiar  el  usuario de el password
+ */
     private void limpiar() {
         txtUsuario.setText("");
         txtPassword.setText("");

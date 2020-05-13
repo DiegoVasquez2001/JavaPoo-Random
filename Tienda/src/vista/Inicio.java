@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+paquete  vista
  */
 package vista;
 
@@ -10,11 +8,18 @@ package vista;
  *
  */
 public class Inicio extends javax.swing.JFrame {
-
+/*
+funciones estaticas de registro y login
+ */
+    
     public static registro frmReg;
     public static login frmLog;
 
     public Inicio() {
+        /*
+componentes  
+        de  localizacion
+ */
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -69,7 +74,9 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
-
+/*
+condicion de de  igualda  nulo  registro de frame
+ */
         if (frmReg == null) {
 
             frmReg = new registro();
@@ -79,6 +86,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+      /*
+condicion  nulo  de igualdad de  loing de  frame
+ */
         if (frmLog == null) {
             frmLog = new login();
             frmLog.setVisible(true);
