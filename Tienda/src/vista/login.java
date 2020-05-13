@@ -141,7 +141,9 @@ condicio de  fame  menu
                 
                 menu frmMenu = new menu(mod);
                 frmMenu.setVisible(true);
-                
+                       /*
+condicio de  datos incorrectos
+ */ 
             } else {
                 JOptionPane.showMessageDialog(null, "Datos incorrectos");
                 limpiar();
