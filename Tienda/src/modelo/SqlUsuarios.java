@@ -14,7 +14,7 @@ public class SqlUsuarios extends Conexion {
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "INSERT INTO usuario (usuario, password, nombre, email, idTipo) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO usuarios (usuario, password, nombre, email, idTipo) VALUES(?,?,?,?,?)";
 
         try {
             ps = con.prepareStatement(sql);
@@ -42,7 +42,7 @@ public class SqlUsuarios extends Conexion {
         ResultSet rs = null;
         Connection con = getConexion();
 
-        String sql = "SELECT id, usuario, password, nombre, idTipo FROM usuario WHERE usuario = ? LIMIT 1";
+        String sql = "SELECT id, usuario, password, nombre, idTipo FROM usuarios WHERE usuario = ? LIMIT 1";
 
         try {
             ps = con.prepareStatement(sql);
@@ -78,7 +78,7 @@ public class SqlUsuarios extends Conexion {
         ResultSet rs = null;
         Connection con = getConexion();
 
-        String sql = "SELECT count(id) FROM usuario WHERE usuario = ?";
+        String sql = "SELECT count(id) FROM usuarios WHERE usuario = ?";
 
         try {
             ps = con.prepareStatement(sql);

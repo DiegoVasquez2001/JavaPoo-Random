@@ -9,7 +9,7 @@ import modelo.Usuarios;
 
 /**
  *
- */
+/*declaracion de la clase de la cual se va heredar(extends)*/
 public class menu extends javax.swing.JFrame {
 
     Usuarios mod;
@@ -17,12 +17,13 @@ public class menu extends javax.swing.JFrame {
     public menu() {
         initComponents();
     }
+    /*menu del contenedor*/
 
     menu(Usuarios mod) {
         initComponents();
         setLocationRelativeTo(null);
         this.mod = mod;
-
+/*funcion que hace visible menu produtos y proveedore*/
         if (mod.getIdTipo() == 1) {
             menuProductos.setVisible(true);
             menuProveedores.setVisible(true);
@@ -52,6 +53,11 @@ public class menu extends javax.swing.JFrame {
         menuProductos.setText("Productos");
 
         subMenuAddProducto.setText("Agregar");
+        subMenuAddProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMenuAddProductoActionPerformed(evt);
+            }
+        });
         menuProductos.add(subMenuAddProducto);
 
         subMenuEditProducto.setText("Modificar");
@@ -76,11 +82,15 @@ public class menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 579, Short.MAX_VALUE)
+            .addGap(0, 581, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void subMenuAddProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuAddProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subMenuAddProductoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
