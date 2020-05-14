@@ -1,5 +1,15 @@
+//DOCUMENTACIÓN POR: DIEGO VÁSQUEZ//
+
+/*CLASE SQLUsuarios
+    ¿Cuál es la funcionalidad de esta clase?
+    Esta clase hace un enlace entre los atributos de la clase Usuarios y la Base de Datos,
+    realiza las diversas transacciones de SQL, almacena y manipula información de los 
+    diversos usuarios. 
+*/
+
 package modelo;
 
+/*LIBRERIAS DE UTILIDAD*/
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,6 +20,16 @@ import javax.swing.JOptionPane;
 
 public class SqlUsuarios extends Conexion {
 
+    /*MÉTODO REGISTRAR
+        Tipo: Booleano
+        Parámetros: Atributos de la Clase Usuario
+        Funcionalidad:
+        Su objetivo es Registrar; el método registrar contiene una instrucción SQL
+        la cual también recibe como parámetros los atributos de la clase Usuario
+        los cuales son llamados por el parámetro de este método "usr" de tipo Clase Usuario
+        el capturador (try-catch) si realiza exitosamente la transacción retorna true lo cual 
+        a su vez el método retornará true y en caso contario false. */
+    
     public boolean registrar(Usuarios usr) {
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -36,7 +56,13 @@ public class SqlUsuarios extends Conexion {
             }
         }
     }
-
+    /*MÉTODO LOGIN
+        Tipo: Booleano
+        Parámetros: Atributos de Clase Usuario
+        Funcionalidad:
+        Su objetivo es: Logear; realiza un recorrido a lo largo de la tabla usuarios y verifica si
+        las credenciales ingresadas se encuentran o no en la base de datos.*/
+    
     public boolean login(Usuarios usr) {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -73,6 +99,12 @@ public class SqlUsuarios extends Conexion {
         }
     }
 
+    /*MÉTODO existeUsuario
+    Tipo: Entero
+    Parametros: usuario, tipo String
+    Funcionalidad:
+    Su objetivo Verificar si un Usuario ya existe en la BD;  
+    */
     public int existeUsuario(String usuario) {
         PreparedStatement ps = null;
         ResultSet rs = null;

@@ -1,8 +1,9 @@
 
 package modelo;
-
+/*Herbert Leonel Dominguez Chavez 9959-19-5644*/
+//* Se crea el constructor de Usuarios*//
 public class Usuarios {
-    
+    //* se crea los atributos del constructor para procesar la informacion*//
     private int id;
     private String usuario;
     private String password;
@@ -10,7 +11,7 @@ public class Usuarios {
     private String email;
     private String last_session;
     private int idTipo;
-
+//*se crea funciones getters an setters de los atributos ya creados para obtener y cambiar información*//
     public int getId() {
         return id;
     }
